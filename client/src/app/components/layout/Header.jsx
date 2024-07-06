@@ -35,7 +35,7 @@ const NavLinks = [
   },
 ];
 
-export default function Header() {
+export default function Header({}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isActive = (href) => pathname === href;
@@ -55,7 +55,7 @@ export default function Header() {
     setMenuOpen(!menuOpen);
   };
   return (
-    <header className="p-4 md:p-6 w-full flex justify-between items-center lg:py-8 lg:px-10 relative z-50">
+    <header className="p-4 md:p-6 w-full flex justify-between items-center lg:py-8 lg:px-10 relative z-50 max-w-[1920px] mx-auto">
       <Link href="/" className="flex relative z-20 gap-2 items-center">
         <Image
           className="w-10"
@@ -68,7 +68,9 @@ export default function Header() {
       </Link>
       <nav className="">
         <button
-          className="lg:hidden w-10 h-8 flex relative z-20 items-center"
+          className={`lg:hidden w-10 h-8 flex relative z-20 items-center transition-all duration-200 ${
+            menuOpen && "rotate-[360deg]"
+          }`}
           onClick={handleToggleMenu}
         >
           <HamburgerIcon menuOpen={menuOpen} />

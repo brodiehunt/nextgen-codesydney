@@ -1,3 +1,4 @@
-import person from './person'
+import navLink from './navLink.js'
+import header from './headerNavigation.js'
 
-export const schemaTypes = [person]
+export const schemaTypes = [navLink, header]
