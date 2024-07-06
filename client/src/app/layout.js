@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Header from "./components/layout/Header";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,8 +11,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark overflow-x-hidden">
+      <body className={`${inter.className} overflow-x-hidden relative`}>
+        <Header />
+        <div className="w-[600px] skew-y-12 h-[460px] bg-gradient-to-br from-custom-primary/20 via-custom-primary/50 to-white/50 rounded-full blur-[100px] absolute top-[20px] left-[50px]"></div>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
