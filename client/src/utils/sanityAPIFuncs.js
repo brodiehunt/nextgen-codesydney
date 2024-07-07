@@ -27,6 +27,28 @@ export const fetchHomepageData = async () => {
           number,
           text
         }
+      },
+      friendsSection {
+        mainTitle,
+        pseudoTitle,
+        logoCarousel[] {
+          asset->{
+            url
+          },
+          alt
+        }
+      },
+      projectsSection {
+        mainTitle,
+        pseudoTitle,
+        belowTitleText,
+        projects[] {
+          organisation,
+          projectType,
+          projectDescription,
+          projectSponserLinkUrl,
+          projectImage
+        }
       }
     }[0]
   `;

@@ -12,7 +12,7 @@ const SvgCurve = () => {
     window.innerHeight / 2
   } 0 0`;
   return (
-    <svg className="absolute top-0 right-[-100px] w-[100px] h-[100%] fill-custom-dark/60 stroke-none">
+    <svg className="absolute top-0 right-[-100px] w-[100px] h-[100%] fill-custom-dark/90 stroke-none">
       <path d={initialPath}></path>
     </svg>
   );
@@ -32,7 +32,7 @@ export default function MobileDropdown({ navLinks, isActive, pathname }) {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="h-[100%] bg-custom-dark/60 flex flex-col min-w-[300px] items-stretch gap-4 p-8 pt-[100px] relative"
+        className="h-[100%] bg-custom-dark/90 flex flex-col min-w-[300px] items-stretch gap-4 p-8 pt-[100px] relative"
       >
         <SvgCurve />
         {navLinks &&
@@ -49,7 +49,7 @@ export default function MobileDropdown({ navLinks, isActive, pathname }) {
                   index === navLinks.length - 1 && "mt-auto"
                 } ${
                   isActive(link.href) &&
-                  "bg-custom-primary/10 text-custom-primary"
+                  "bg-custom-primary/25 text-custom-primary"
                 }`}
               >
                 <NavLink

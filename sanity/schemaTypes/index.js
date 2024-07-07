@@ -6,6 +6,9 @@ import homeHero from './homeHero.js'
 import statisticsCard from './statisticsCard.js'
 import iconDropdown from './iconDropdown.js'
 import statisticsSection from './statisticsSection.js'
+import projectsSection from './projectsSection.js'
+import projectCard from './projectCard.js'
+import FriendsSection from './FriendsSection.js'
 
 export const schemaTypes = [
   navLink,
@@ -16,4 +19,7 @@ export const schemaTypes = [
   statisticsCard,
   statisticsSection,
   iconDropdown,
+  projectsSection,
+  projectCard,
+  FriendsSection,
 ]

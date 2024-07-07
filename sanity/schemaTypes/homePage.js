@@ -18,5 +18,15 @@ export default {
       title: 'Statistics Section',
       type: 'statistics',
     },
+    {
+      name: 'friendsSection',
+      title: 'Friends Section',
+      type: 'friendsSection',
+    },
+    {
+      name: 'projectsSection',
+      title: 'Projects Section',
+      type: 'projectsSection',
+    },
   ],
 }

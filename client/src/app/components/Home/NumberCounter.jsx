@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 
 export default function NumberCounter({ number }) {
   const [numberCount, setNumberCount] = useState(0);
-  // console.log(number);
+
   useEffect(() => {
     const intervalChange = (2 / number) * 1000;
-    console.log(intervalChange);
+
     const countInterval = setInterval(() => {
       if (number > numberCount) {
         setNumberCount((prevNumber) => {
