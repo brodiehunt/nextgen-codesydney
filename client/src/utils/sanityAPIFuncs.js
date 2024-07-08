@@ -49,6 +49,27 @@ export const fetchHomepageData = async () => {
           projectSponserLinkUrl,
           projectImage
         }
+      },
+      testimonialsSection {
+        mainTitle,
+        pseudoTitle,
+        testimonials[] {
+          name,
+          organisation,
+          jobTitle,
+          review,
+        }
+      },
+      gallerySection {
+        mainTitle, 
+        pseudoTitle,
+        galleryImages[] {
+          asset->{
+            url
+          },
+          alt,
+          caption,
+        }
       }
     }[0]
   `;

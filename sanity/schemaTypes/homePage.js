@@ -28,5 +28,15 @@ export default {
       title: 'Projects Section',
       type: 'projectsSection',
     },
+    {
+      name: 'testimonialsSection',
+      title: 'Testimonials Section',
+      type: 'testimonialsSection',
+    },
+    {
+      name: 'gallerySection',
+      title: 'Gallery Section',
+      type: 'gallerySection',
+    },
   ],
 }

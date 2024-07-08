@@ -9,6 +9,10 @@ import statisticsSection from './statisticsSection.js'
 import projectsSection from './projectsSection.js'
 import projectCard from './projectCard.js'
 import FriendsSection from './FriendsSection.js'
+import testimonialCard from './testimonialCard.js'
+import testimonialsSection from './testimonialsSection.js'
+import galleryImage from './galleryImage.js'
+import gallerySection from './gallerySection.js'
 
 export const schemaTypes = [
   navLink,
@@ -22,4 +26,8 @@ export const schemaTypes = [
   projectsSection,
   projectCard,
   FriendsSection,
+  testimonialCard,
+  testimonialsSection,
+  galleryImage,
+  gallerySection,
 ]

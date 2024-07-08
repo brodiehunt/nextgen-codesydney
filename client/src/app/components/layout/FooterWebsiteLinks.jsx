@@ -11,8 +11,8 @@ const footerLinks = [
     href: "/team",
   },
   {
-    text: "Teachies4Good",
-    href: "/teachies4Good",
+    text: "Techies4Good",
+    href: "/techies4good",
   },
   {
     text: "Apps4Good",
