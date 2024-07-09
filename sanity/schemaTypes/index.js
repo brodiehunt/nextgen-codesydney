@@ -13,6 +13,12 @@ import testimonialCard from './testimonialCard.js'
 import testimonialsSection from './testimonialsSection.js'
 import galleryImage from './galleryImage.js'
 import gallerySection from './gallerySection.js'
+import pageHeader from './pageHeader.js'
+import aboutPage from './aboutPage.js'
+import techies4goodPage from './techies4goodPage.js'
+import apps4GoodPage from './apps4GoodPage.js'
+import teamPage from './teamPage.js'
+import techie from './techie.js'
 
 export const schemaTypes = [
   navLink,
@@ -30,4 +36,10 @@ export const schemaTypes = [
   testimonialsSection,
   galleryImage,
   gallerySection,
+  pageHeader,
+  aboutPage,
+  techies4goodPage,
+  apps4GoodPage,
+  teamPage,
+  techie,
 ]

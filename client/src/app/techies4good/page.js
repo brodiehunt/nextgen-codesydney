@@ -1,23 +1,29 @@
 import PageHeader from "../components/shared/PageHeader";
+import { fetchTechiePageData } from "@/utils/sanityAPIFuncs";
+import { PortableText } from "@portabletext/react";
+import TechiesCards from "./TechiesCards";
+import { v4 as uuidv4 } from "uuid";
 
-export default function Techies4Good() {
+export default async function Techies4Good() {
+  const techiesPageData = await fetchTechiePageData();
+  const { pageHeader, techies } = techiesPageData;
+  const newTechies = [...techies, ...techies];
+  const techiesWithIds = [...newTechies].map((techie, index) => {
+    return {
+      ...techie,
+      id: uuidv4(),
+    };
+  });
+  console.log(techiesWithIds);
+  // console.log(techiesWithIds);
   return (
     <>
-      <PageHeader pageTitle="Techies4Good">
-        <p className="mb-2">
-          Techies4Good (T4G) is Code.Sydney's elite team. Its members are
-          seasoned software and data engineers with proven commercial
-          experience, published portfolios, invited and nominated by community
-          leaders
-        </p>
-        <p className="">
-          If you are a non-profit or charity organisation that requires some
-          tech assistance, please contact Amro Zoabe from IMS at 0439 627 260 or
-          send a message on IMS website. Please note that 90% of the revenue
-          goes to those who did the work, 5% goes to IMS, and the remaining 5%
-          goes to Code.Sydney.
-        </p>
+      <PageHeader pageTitle={pageHeader?.pageTitle ? pageHeader.pageTitle : ""}>
+        {pageHeader?.underTitleContent && (
+          <PortableText value={pageHeader.underTitleContent} />
+        )}
       </PageHeader>
+      {techies && <TechiesCards techiesData={techiesWithIds} />}
     </>
   );
 }

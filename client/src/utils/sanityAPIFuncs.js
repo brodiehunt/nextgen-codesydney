@@ -77,3 +77,28 @@ export const fetchHomepageData = async () => {
   const data = await client.fetch(homeDataQuery);
   return data;
 };
+
+export const fetchTechiePageData = async () => {
+  const techiesDataQuery = `
+    *[_type == "techies4GoodPage"]{
+      pageHeader {
+        pageTitle,
+        underTitleContent,
+      },
+      techies[] {
+        name,
+        description,
+        linkedinUrl,
+        image {
+          asset->{
+          url
+          },
+          alt,
+        },
+      },
+    }[0]
+  `;
+
+  const data = await client.fetch(techiesDataQuery);
+  return data;
+};
