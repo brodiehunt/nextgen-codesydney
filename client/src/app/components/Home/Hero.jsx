@@ -36,8 +36,9 @@ export default function Hero({ hero }) {
             // className="w-10"
             src={image.asset.url}
             alt={image?.alt ? image.alt : ""}
-            width={900}
-            height={200}
+            width={306}
+            height={193}
+            priority
           />
         )}
       </div>
