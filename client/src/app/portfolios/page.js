@@ -19,7 +19,7 @@ export default async function Apps4Good() {
       {portfolios && <TechiesCards techiesData={portfolios} />}
       <CallToAction title="Need some tech assistance from one of our Techies4Good?">
         <p className="text-center mb-8 max-w-[600px]">
-          Techies4Good (T4G) is Code.Sydney's elite team. Its members are
+          Techies4Good (T4G) is Code.Sydney&apos;s elite team. Its members are
           seasoned software and data engineers with proven commercial
           experience, published portfolios, invited and nominated by community
           leaders
