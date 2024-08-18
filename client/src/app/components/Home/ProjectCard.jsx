@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { urlFor } from "@/utils/sanity";
+import LinkButton from "../shared/LinkButton";
 
 const indexOne =
   "xl:translate-x-[-100%] xl:scale-150 xl:blur-lg xl:opacity-0 xl:pointer-events-none";
@@ -26,15 +27,21 @@ export default function ProjectCard({ projectInfo, index }) {
 
   return (
     <article
-      className={`py-8 lg:grid lg:grid-cols-2 xl:absolute xl:h-[100%] xl:top-0 xl:left-0 xl:w-[70%] transition-all duration-[0.7s] xl:pb-0 ${
+      className={`py-8 lg:grid lg:grid-cols-2 lg:gap-4 xl:absolute xl:h-[100%] xl:top-0 xl:left-0 xl:w-[70%] transition-all duration-[0.7s] xl:pb-0 ${
         index < 5 ? styleArray[index] : styleArray[4]
       }`}
     >
-      <div className={`mb-4 lg:order-2`}>
+      <div
+        className={`mb-4 ${
+          index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+        } xl:order-2`}
+      >
         <img src={urlFor(projectImage).url()} alt={projectImage.alt} />
       </div>
       <div
-        className={`mb-8 lg:order-1 lg:max-w-[90%] self-center 
+        className={`mb-8 ${
+          index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+        } lg:max-w-[90%] self-center xl:order-1
                   ${index === 1 ? "xl:opacity-1" : "xl:opacity-0"}`}
       >
         <span
@@ -57,15 +64,16 @@ export default function ProjectCard({ projectInfo, index }) {
         >
           {projectDescription ? projectDescription : ""}
         </p>
-        <a
-          className={`lg:block px-4 py-2 bg-gradient-to-b from-[#2892F9] to-[#1D73C6] hover:from-[#4DAEF9] hover:to-[#3C89C9] rounded shadow-md hover:shadow-inset transition-all duration-300 text-white self-start xl:opacity-0 w-fit ${
-            index === 1 ? "animate-showProjectContentButton" : ""
-          }`}
-          href={projectSponserLinkUrl ? projectSponserLinkUrl : "/"}
+        <LinkButton
+          to={projectSponserLinkUrl ? projectSponserLinkUrl : "/"}
+          variant="hollow"
           target="_blank"
+          extraClasses={
+            index === 1 ? "xl:opacity-0 animate-showProjectContentButton" : ""
+          }
         >
           Link to Project Sponser
-        </a>
+        </LinkButton>
       </div>
     </article>
   );

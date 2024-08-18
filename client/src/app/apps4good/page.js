@@ -1,22 +1,33 @@
 import PageHeader from "../components/shared/PageHeader";
+import { fetchApps4GoodPageData } from "@/utils/sanityAPIFuncs";
+import { PortableText } from "@portabletext/react";
+import TechiesCards from "../techies4good/TechiesCards";
+import CallToAction from "../components/shared/CTA/CallToAction";
+import LinkButton from "../components/shared/LinkButton";
 
-export default function Apps4Good() {
+export default async function Apps4Good() {
+  const apps4GoodPageData = await fetchApps4GoodPageData();
+  const { pageHeader, apps } = apps4GoodPageData;
+
   return (
     <>
-      <PageHeader pageTitle="Apps4Good">
-        <p className="mb-2">
-          Apps4Good is Code.Sydney's initiative to showcase apps made the
-          community and ready to be customised for any non-profit and charity
-          organisation.
-        </p>
-        <p className="">
-          If you find any app below which can help your organisation, please
-          feel free to let us know. You can contact Amro Zoabe from IMS at 0439
-          627 260 or send a message on IMS website. Please note that 70% of the
-          revenue goes to the app owner, 25% goes to IMS, and the remaining 5%
-          goes to Code.Sydney.
-        </p>
+      <PageHeader pageTitle={pageHeader?.pageTitle ? pageHeader.pageTitle : ""}>
+        {pageHeader?.underTitleContent && (
+          <PortableText value={pageHeader.underTitleContent} />
+        )}
       </PageHeader>
+      {apps && <TechiesCards techiesData={apps} />}
+      <CallToAction title="Need some tech assistance from one of our Techies4Good?">
+        <p className="text-center mb-8 max-w-[600px]">
+          Techies4Good (T4G) is Code.Sydney's elite team. Its members are
+          seasoned software and data engineers with proven commercial
+          experience, published portfolios, invited and nominated by community
+          leaders
+        </p>
+        <LinkButton to="/contact" variant="hollow" target="">
+          Get Started Now
+        </LinkButton>
+      </CallToAction>
     </>
   );
 }

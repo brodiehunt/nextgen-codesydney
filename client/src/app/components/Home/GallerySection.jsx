@@ -52,7 +52,7 @@ export default function GallerySection({ galleryData }) {
 
   return (
     <>
-      <section className="relative z-20 w-full mx-auto px-4 py-12 md:px-6 md:py-10 lg:px-10 lg:py-16 overflow-hidden md:my-8 lg:my-16">
+      <section className="relative z-20 w-full mx-auto max-w-[1920px] px-4 py-12 md:px-6 md:py-10 lg:px-10 lg:py-16 overflow-hidden md:my-8 lg:my-16">
         <SectionTitle psuedoTitle={pseudoTitle ? pseudoTitle : ""}>
           <span className="text-custom-primary">
             {mainTitle ? mainTitle : ""}
@@ -104,7 +104,7 @@ export default function GallerySection({ galleryData }) {
             <img
               src={modalImage.asset.url}
               alt={modalImage.alt}
-              className="object-contain w-[100%] h-[100%]"
+              className="object-contain w-[100%] h-auto"
             />
             <p className="">{modalImage.caption}</p>
           </div>

@@ -1,55 +1,74 @@
 import { FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
-
+import { motion, useAnimate } from "framer-motion";
+import LinkButton from "../components/shared/LinkButton";
+import { useEffect, useState } from "react";
 export default function TechieCard({
   techieData,
+  isCardActive,
   index,
-  uniqueKey,
+  activeIndex,
+  isLargeScreen,
+  isLastCard,
   direction,
 }) {
+  const [showText, setShowText] = useState(false);
   const { name, description, linkedinUrl, image, id } = techieData;
-  const isActive = index === 1 ? true : false;
+  const [isActive, setIsActive] = useState(isCardActive);
+  // const [scope, animate] = useAnimate();
+  // const isActive = index === activeIndex ? true : false;
+
+  useEffect(() => {
+    setIsActive(isCardActive);
+    // if (isCardActive) {
+    //   animate(scope.current, { opacity: 1 });
+    // }
+  }, [isCardActive]);
+
   return (
-    <motion.article
-      className={`p-4 rounded mb-8 lg:mb-0 lg:mr-12 bg-custom-primary/5 lg:inline-block lg:max-w-[900px] lg:relative lg:translate-x-[100px]
-        ${index === 0 ? "opacity-0" : ""} ${index === 5 ? "opacity-0" : ""}`}
-      // key={id}
+    <motion.div
       layout
-      // initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
-      // animate={{ opacity: 1, x: 0 }}
-      // exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
-      transition={{ duration: 0.5 }}
+      style={{
+        width: isLargeScreen ? (isActive ? "850px" : "432px") : "",
+        transform: `translateX(-${activeIndex * 472}px)`,
+      }}
+      transition={{ duration: 0.3 }}
+      className="mb-10 p-4 bg-custom-light/5 rounded max-w-[100%] lg:inline-block lg:mr-10 lg:max-w-[850px] transition-all duration-1000"
     >
       <div
-        className={`md:grid md:gap-4 md:grid-cols-2 transition-[grid-template-columns] duration-500 ease-in-out ${
-          isActive ? "lg:grid-cols-2" : "lg:grid-cols-1"
+        className={`transiton-all duration-1000 md:grid grid-cols-2 gap-4 lg:grid-cols-1 ${
+          isActive ? "lg:grid-cols-2" : ""
         }`}
       >
-        <div className="mb-4 md:mb-0">
-          <img src={image.asset.url} className="md:max-w-[400px] md:w-full" />
+        <div className="md:max-w-[400px] lg:w-[400px]">
+          <img src={image.asset.url} className="" />
         </div>
-        <div
-          className={`whitespace-normal md:flex md:flex-col md:justify-center transition-all duration-500 ease-in-out ${
-            isActive ? "lg:flex opacity-100" : "lg:hidden opacity-0"
-          }`}
-        >
-          <h2 className="font-semibold text-custom-primary text-2xl mb-2 md:text-4xl">
-            {name}
-          </h2>
-          <p className="text-custom-light/80 mb-2 md:mb-4 text-sm">
-            {description}
-          </p>
-          <div>
-            <a
-              className="px-4 py-2 bg-gradient-to-b from-[#2892F9] to-[#1D73C6] hover:from-[#4DAEF9] hover:to-[#3C89C9] rounded shadow-md hover:shadow-inset transition-all duration-300 text-white flex items-center gap-2 w-fit"
-              href={linkedinUrl}
-              target="_blank"
-            >
-              Visit Linkedin <FaLinkedin className="text-2xl" />
-            </a>
-          </div>
-        </div>
+        {isActive && (
+          <motion.div
+            style={{ display: isActive ? "block" : "none" }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: isLargeScreen ? 1 : "100%" }}
+            transition={{ duration: 0.3, delay: 1 }}
+            className={`mt-4 h-fit`}
+          >
+            <h2 className="text-2xl mb-2 text-custom-primary font-medium whitespace-normal">
+              {name}
+            </h2>
+            <p className="text-custom-light/80 text-sm whitespace-normal">
+              {description}
+            </p>
+            <div>
+              <LinkButton
+                to={linkedinUrl}
+                variant="hollow"
+                target="_blank"
+                extraClasses="mt-4"
+              >
+                Visit Linkedin <FaLinkedin className="text-2xl" />
+              </LinkButton>
+            </div>
+          </motion.div>
+        )}
       </div>
-    </motion.article>
+    </motion.div>
   );
 }

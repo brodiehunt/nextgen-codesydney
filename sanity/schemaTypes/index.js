@@ -19,6 +19,9 @@ import techies4goodPage from './techies4goodPage.js'
 import apps4GoodPage from './apps4GoodPage.js'
 import teamPage from './teamPage.js'
 import techie from './techie.js'
+import app from './app.js'
+import portfoliosPage from './portfoliosPage.js'
+import portfolio from './portfolio.js'
 
 export const schemaTypes = [
   navLink,
@@ -42,4 +45,7 @@ export const schemaTypes = [
   apps4GoodPage,
   teamPage,
   techie,
+  app,
+  portfoliosPage,
+  portfolio,
 ]

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import Button from "../shared/Button";
+import LinkButton from "../shared/LinkButton";
 
 export default function Hero({ hero }) {
   const { aboveTitle, title, moto, intro, image, internalLink } = hero;
@@ -23,12 +25,9 @@ export default function Hero({ hero }) {
 
         <p className="mb-6">{intro ? intro : ""}</p>
         {internalLink && (
-          <Link
-            href={internalLink.href ? internalLink.href : "/"}
-            className="px-4 py-2 bg-gradient-to-b from-[#2892F9] to-[#1D73C6] hover:from-[#4DAEF9] hover:to-[#3C89C9] rounded shadow-md hover:shadow-inset transition-all duration-300 text-white self-start"
-          >
+          <LinkButton to={internalLink.href ? internalLink.href : "/"}>
             {internalLink.label ? internalLink.label : "Learn more"}
-          </Link>
+          </LinkButton>
         )}
       </div>
       <div className="">
@@ -41,12 +40,6 @@ export default function Hero({ hero }) {
             height={200}
           />
         )}
-
-        {/* <img
-          className=""
-          alt="Illustration of a programmer working."
-          src={heroIllustration}
-        /> */}
       </div>
     </section>
   );

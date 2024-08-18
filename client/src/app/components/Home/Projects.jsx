@@ -2,11 +2,18 @@
 import { useState } from "react";
 import { GrFormNextLink } from "react-icons/gr";
 import ProjectCard from "./ProjectCard";
+import ProjectSectionNav from "./ProjectSectionNav";
 
 export default function Projects({ projectsData }) {
   const [projects, setProjects] = useState(projectsData);
-
+  const [currentProject, setCurrentProject] = useState(1);
   const handleNextClick = () => {
+    if (currentProject === projects.length) {
+      setCurrentProject(1);
+    } else {
+      setCurrentProject(currentProject + 1);
+    }
+
     const newProjects = [...projects.slice(1), projects[0]];
     setProjects(newProjects);
   };
@@ -26,13 +33,18 @@ export default function Projects({ projectsData }) {
           })}
       </div>
       <div className="justify-start gap-20 hidden xl:flex ">
-        <button
+        {/* <button
           className="group flex gap-2 items-center text-custom-primary py-1  hover:text-custom-light hover:border-custom-light transition-all duration-400"
           onClick={handleNextClick}
         >
           Next Project
           <GrFormNextLink className="text-3xl text-custom-primary ml-0 group-hover:text-custom-light transition-all duration-400 group-hover:translate-x-[10px]" />
-        </button>
+        </button> */}
+        <ProjectSectionNav
+          projectsLength={projects.length}
+          currentProject={currentProject}
+          handleNextClick={handleNextClick}
+        />
       </div>
     </div>
   );

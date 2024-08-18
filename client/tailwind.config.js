@@ -36,6 +36,13 @@ module.exports = {
           },
           "100%": { transform: "translateY(0)", filter: "blur(0)", opacity: 1 },
         },
+        testimonialAutoSlide: {
+          "0%": { width: "0px" },
+          "100%": { width: "100%" },
+        },
+      },
+      transitionProperty: {
+        width: "width",
       },
       animation: {
         carouselSlide: "carouselSlide 30s infinite linear",
@@ -47,6 +54,7 @@ module.exports = {
           "showProjectContent 0.5s ease-in-out 1.1s forwards",
         showProjectContentButton:
           "showProjectContent 0.5s ease-in-out 1.3s forwards",
+        testimonialAutoSlide: "testimonialAutoSlide 10s infinite linear",
       },
       gridTemplateColumns: {
         "40-60": "40% 60%",

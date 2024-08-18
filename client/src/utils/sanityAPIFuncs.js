@@ -102,3 +102,53 @@ export const fetchTechiePageData = async () => {
   const data = await client.fetch(techiesDataQuery);
   return data;
 };
+
+export const fetchApps4GoodPageData = async () => {
+  const apps4GoodQuery = `
+    *[_type == "apps4GoodPage"]{
+      pageHeader {
+        pageTitle,
+        underTitleContent,
+      },
+      apps[] {
+        name,
+        description,
+        linkedinUrl,
+        image {
+          asset->{
+          url
+          },
+          alt,
+        },
+      },
+    }[0]
+  `;
+
+  const data = await client.fetch(apps4GoodQuery);
+  return data;
+};
+
+export const fetchPortfoliosPageData = async () => {
+  const portfoliosQuery = `
+    *[_type == "portfoliosPage"]{
+      pageHeader {
+        pageTitle,
+        underTitleContent,
+      },
+      portfolios[] {
+        name,
+        description,
+        linkedinUrl,
+        image {
+          asset->{
+          url
+          },
+          alt,
+        },
+      },
+    }[0]
+  `;
+
+  const data = await client.fetch(portfoliosQuery);
+  return data;
+};

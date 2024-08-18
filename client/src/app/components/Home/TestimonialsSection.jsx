@@ -14,6 +14,7 @@ export default function TestimonialsSection({ testimonialsData }) {
   const [cardFirstColHeight, setCardFirstColHeight] = useState(0);
   const [cardSecondColHeight, setCardSecondColHeight] = useState(0);
   const [blueTitle, whiteTitle] = [mainTitle.slice(0, 7), mainTitle.slice(7)];
+  const [animateProgressKey, setAnimateProgressKey] = useState(0);
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleResize = () => {
@@ -29,7 +30,7 @@ export default function TestimonialsSection({ testimonialsData }) {
 
   useEffect(() => {
     let interval;
-    if (windowWidth >= 1280) {
+    if (windowWidth >= 768) {
       interval = setInterval(() => {
         setTestSlider((prevSlider) => {
           const newSlider = [
@@ -38,6 +39,8 @@ export default function TestimonialsSection({ testimonialsData }) {
           ];
           return newSlider;
         });
+
+        setAnimateProgressKey(animateProgressKey + 1);
       }, 10000); // Adjust the interval time as needed
     }
 
@@ -73,18 +76,23 @@ export default function TestimonialsSection({ testimonialsData }) {
   };
 
   return (
-    <section className="relative z-20 w-full mx-auto mt-4 p-4 py-8 md:p-6 md:py-10 lg:p-10 lg:py-16">
+    <section className="relative z-20 w-full mx-auto max-w-[1920px] mt-4 p-4 py-8 md:p-6 md:py-10 lg:p-10 lg:py-16">
       <div className="w-[700px] skew-y-12 h-[460px] bg-gradient-to-br from-custom-primary/20 via-custom-primary/50 to-white/50 rounded-full blur-[100px] absolute top-[100px] left-[50%] translate-x-[-30%] z-0 xl:w-[1200px]"></div>
       <div className="relative z-100 xl:grid xl:grid-cols-40-60">
         <div className="relative mb-8">
-          <SectionTitle psuedoTitle={pseudoTitle ? pseudoTitle : ""}>
-            <span className="text-custom-primary">{blueTitle}</span>
+          <SectionTitle psuedoTitle={pseudoTitle ? "Reviews" : ""}>
+            <span className="text-custom-primary">Testimonials</span>
             {whiteTitle}
           </SectionTitle>
         </div>
-
+        <div className="absolute right-0 w-[200px] h-1 rounded-full bg-custom-light/20">
+          <div
+            key={animateProgressKey}
+            className="h-1 rounded-full animate-testimonialAutoSlide bg-custom-light"
+          ></div>
+        </div>
         <div>
-          <div className="py-3 flex justify-between max-w-[700px] mx-auto xl:hidden">
+          <div className="py-3 flex justify-between max-w-[700px] mx-auto md:hidden">
             <button
               className="text-custom-light flex gap-2 items-center"
               onClick={previous}
@@ -99,7 +107,7 @@ export default function TestimonialsSection({ testimonialsData }) {
               Next <CiCircleChevRight />
             </button>
           </div>
-          <div className="flex justify-center items-stretch gap-4 overflow-hidden relative z-100 xl:hidden">
+          <div className="flex justify-center items-stretch gap-4 overflow-hidden relative z-100 md:hidden">
             {testSlider &&
               testSlider.map((testimonial, index) => {
                 return (
@@ -111,7 +119,8 @@ export default function TestimonialsSection({ testimonialsData }) {
                 );
               })}
           </div>
-          <div className="justify-center items-stretch gap-4 overflow-hidden relative z-100 hidden xl:grid xl:grid-cols-2 max-h-[900px]">
+          {/* All Of The Below Content Is Only For screens > 1280px */}
+          <div className="justify-center items-stretch gap-4 overflow-hidden relative z-100 hidden md:grid md:grid-cols-2 max-h-[750px]">
             {testSlider && (
               <>
                 <div>

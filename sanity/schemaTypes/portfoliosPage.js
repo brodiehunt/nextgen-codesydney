@@ -1,6 +1,6 @@
 export default {
-  name: 'apps4GoodPage',
-  title: 'Apps4Good page',
+  name: 'portfoliosPage',
+  title: 'Portfolios Page',
   type: 'document',
   fields: [
     {
@@ -10,10 +10,10 @@ export default {
       description: 'The content that appears at the top of the page, before the main content.',
     },
     {
-      name: 'apps',
-      title: 'Apps4Good',
+      name: 'portfolios',
+      title: 'Portfolios',
       type: 'array',
-      of: [{type: 'app'}],
+      of: [{type: 'portfolio'}],
     },
   ],
 }
