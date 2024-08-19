@@ -7,17 +7,12 @@ import SectionTitle from "../shared/SectionTitle";
 import GalleryImage from "./GalleryImage";
 import { IoIosCloseCircle } from "react-icons/io";
 
-const Column = ({
-  images,
-  y = 0,
-  colNumber,
-  initialTopPosition,
-  handleToggleModal,
-}) => {
+const Column = ({ images, y = 0, colNumber, handleToggleModal }) => {
+  console.log(y);
   return (
     <motion.div
       style={{ y }}
-      className={`w-[33%] h-[100%] relative flex flex-col gap-[2vw] ${initialTopPosition}`}
+      className={`w-[33%] h-[100%] relative flex flex-col gap-[2vw]`}
     >
       {images.map((image, index) => {
         return (
@@ -40,15 +35,22 @@ export default function GallerySection({ galleryData }) {
     target: container,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.2]);
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [width < 1024 ? -height * 0.9 : -height * 1.4, height * 1.4]
+  );
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * -0.2]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.3]);
+  const y3 = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [width < 1024 ? -height * 0.9 : -height * 1.4, height * 1.4]
+  );
   const { mainTitle, pseudoTitle, galleryImages } = galleryData;
-  console.log(pseudoTitle);
+
   const handleToggleModal = (image) => {
     setModalImage(image);
   };
-  console.log("titles", mainTitle, pseudoTitle);
 
   return (
     <>
@@ -61,12 +63,11 @@ export default function GallerySection({ galleryData }) {
         <ReactLenis root>
           <div
             ref={container}
-            className="h-[100vh] md:h-[130vh] flex flex-row gap-[2vw] relative overflow-hidden md:my-8"
+            className="h-[80vh] lg:h-[130vh] flex flex-row gap-[2vw] relative overflow-hidden md:my-8"
           >
             <Column
               colNumber={1}
               images={[galleryImages[0], galleryImages[1], galleryImages[9]]}
-              initialTopPosition="top-[-60%] md:top-[-45%]"
               y={y}
               handleToggleModal={handleToggleModal}
             />
@@ -78,7 +79,6 @@ export default function GallerySection({ galleryData }) {
                 galleryImages[5],
                 galleryImages[6],
               ]}
-              initialTopPosition="top-[0%] md:top-[5%]"
               y={y2}
               handleToggleModal={handleToggleModal}
             />
@@ -86,7 +86,6 @@ export default function GallerySection({ galleryData }) {
               colNumber={3}
               images={[galleryImages[7], galleryImages[8], galleryImages[2]]}
               y={y3}
-              initialTopPosition="top-[-55%] md:top-[-45%]"
               handleToggleModal={handleToggleModal}
             />
           </div>
