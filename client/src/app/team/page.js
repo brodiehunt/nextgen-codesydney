@@ -1,23 +1,23 @@
 import PageChange from "../components/shared/PageChange";
 import PageHeader from "../components/shared/PageHeader";
+import Leadership from "./Leadership";
+import Mentors from "./Mentors";
+import { fetchTeamPageData } from "@/utils/sanityAPIFuncs";
+import { PortableText } from "@portabletext/react";
 
-export default function Team() {
+export default async function Team() {
+  const teamPageData = await fetchTeamPageData();
+  const { pageHeader, leaders, mentors } = teamPageData;
   return (
     <>
       <PageChange />
-      <PageHeader pageTitle="Meet the Code.Sydney Team">
-        <p className="mb-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p className="">
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+      <PageHeader pageTitle={pageHeader?.pageTitle ? pageHeader.pageTitle : ""}>
+        {pageHeader?.underTitleContent && (
+          <PortableText value={pageHeader.underTitleContent} />
+        )}
       </PageHeader>
+      <Leadership leaders={leaders} />
+      <Mentors mentors={mentors} />
     </>
   );
 }

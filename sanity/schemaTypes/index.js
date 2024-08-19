@@ -22,6 +22,7 @@ import techie from './techie.js'
 import app from './app.js'
 import portfoliosPage from './portfoliosPage.js'
 import portfolio from './portfolio.js'
+import teamMember from './teamMember.js'
 
 export const schemaTypes = [
   navLink,
@@ -48,4 +49,5 @@ export const schemaTypes = [
   app,
   portfoliosPage,
   portfolio,
+  teamMember,
 ]

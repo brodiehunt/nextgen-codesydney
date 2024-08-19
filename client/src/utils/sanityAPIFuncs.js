@@ -152,3 +152,41 @@ export const fetchPortfoliosPageData = async () => {
   const data = await client.fetch(portfoliosQuery);
   return data;
 };
+
+export const fetchTeamPageData = async () => {
+  const teamPageQuery = `
+    *[_type == 'teamPage']{
+      pageHeader {
+        pageTitle,
+        underTitleContent,
+      },
+      leaders[] {
+        memberName,
+        memberRole,
+        memberBio,
+        memberLinkUrl,
+        memberImage {
+            asset->{
+            url
+            },
+            alt,
+          },
+      },
+      mentors[] {
+        memberName,
+        memberRole,
+        memberBio,
+        memberLinkUrl,
+        memberImage {
+            asset->{
+            url
+            },
+            alt,
+          },
+      },
+    }[0]
+  `;
+
+  const data = await client.fetch(teamPageQuery);
+  return data;
+};
