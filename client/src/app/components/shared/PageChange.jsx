@@ -56,7 +56,7 @@ const PageChange = () => {
                 width={100}
                 height={100}
               />
-              <div className="text-4xl font-bold bg-gradient-to-r from-custom-primary via-custom-primary via-20% to-custom-light bg-clip-text text-transparent">
+              <div className="text-4xl font-bold bg-gradient-to-r from-cs-syd-5 via-cs-syd-5 via-20% to-custom-light bg-clip-text text-transparent">
                 Code.Sydney
               </div>
             </div>
