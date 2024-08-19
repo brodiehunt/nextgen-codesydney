@@ -37,8 +37,8 @@ module.exports = {
           "100%": { transform: "translateY(0)", filter: "blur(0)", opacity: 1 },
         },
         testimonialAutoSlide: {
-          "0%": { width: "0px" },
-          "100%": { width: "100%" },
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
         },
       },
       transitionProperty: {

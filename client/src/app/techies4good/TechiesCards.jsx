@@ -49,7 +49,6 @@ export default function TechiesCards({ techiesData }) {
             return (
               <TechieCard
                 activeIndex={currentActiveIndex}
-                // isCardActive={currentActiveIndex === index}
                 isCardActive={
                   windowWidth >= 1024 ? currentActiveIndex === index : true
                 }
@@ -69,21 +68,6 @@ export default function TechiesCards({ techiesData }) {
           handleNextClick={handleNextClick}
           handlePrevClick={handlePrevClick}
         />
-        {/* <div className="relative w-[200px] h-1 rounded-full bg-custom-light/10 mb-4 hidden lg:block">
-          <div
-            style={{ transform: `translateX(${currentActiveIndex * 100}%)` }}
-            className={`h-1 w-[${barSizeAsPercentage}%] bg-custom-light/40 rounded-full transition-all duration-1000 ease-in-out`}
-          ></div>
-        </div>
-        <button
-          className="text-custom-light p-4 rounded-full border-custom-light border-solid border-[1px]"
-          onClick={handlePrevClick}
-        >
-          0{currentActiveIndex + 1}
-        </button>
-        <button className="text-custom-light" onClick={handleNextClick}>
-          0{techies.length}
-        </button> */}
       </div>
     </section>
   );

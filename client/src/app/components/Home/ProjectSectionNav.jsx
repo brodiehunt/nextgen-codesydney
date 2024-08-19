@@ -14,9 +14,11 @@ const ProjectSectionNav = ({
             return (
               <div
                 key={index}
-                className={`bg-custom-light/20 min-h-2 flex-grow rounded-full transition-width duration-500
+                className={`bg-custom-light/20 min-h-2 flex-grow rounded-full transition-all duration-500 scale-x-100
                   ${
-                    index + 1 === currentProject ? "w-4 bg-custom-light/80" : ""
+                    index + 1 === currentProject
+                      ? "scale-x-125 bg-custom-light/80"
+                      : ""
                   }`}
               ></div>
             );
