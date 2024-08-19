@@ -39,7 +39,7 @@ const PageChange = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute top-0 left-0 z-50 w-screen h-screen flex justify-center items-center"
+      className="fixed top-0 left-0 z-50 w-screen h-screen flex justify-center items-center"
     >
       {animateDivs.map((shouldAnimate, index) => (
         <div
