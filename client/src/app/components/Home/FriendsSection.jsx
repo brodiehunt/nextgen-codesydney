@@ -27,7 +27,7 @@ export default function FriendsSection({ friendsData }) {
           {logoCarousel &&
             logoCarousel.map((logo, index) => {
               return (
-                <Image
+                <img
                   key={index}
                   src={urlFor(logo).url()}
                   alt={logo.alt}
@@ -42,7 +42,7 @@ export default function FriendsSection({ friendsData }) {
           {logoCarousel &&
             logoCarousel.map((logo, index) => {
               return (
-                <Image
+                <img
                   key={index}
                   src={urlFor(logo).url()}
                   alt={logo.alt}
