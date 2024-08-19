@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { useTransform, useScroll, motion } from "framer-motion";
 import useDimension from "@/app/hooks/useDimension";
-import { ReactLenis } from "lenis/react";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import SectionTitle from "../shared/SectionTitle";
 import GalleryImage from "./GalleryImage";
 import { IoIosCloseCircle } from "react-icons/io";
@@ -33,7 +33,6 @@ const Column = ({
 };
 
 export default function GallerySection({ galleryData }) {
-  // const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(false);
   const container = useRef(null);
   const { height, width } = useDimension();
