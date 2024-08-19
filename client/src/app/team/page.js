@@ -1,8 +1,10 @@
+import PageChange from "../components/shared/PageChange";
 import PageHeader from "../components/shared/PageHeader";
 
 export default function Team() {
   return (
     <>
+      <PageChange />
       <PageHeader pageTitle="Meet the Code.Sydney Team">
         <p className="mb-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

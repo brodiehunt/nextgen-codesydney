@@ -5,6 +5,7 @@ import TechiesCards from "./TechiesCards";
 import { v4 as uuidv4 } from "uuid";
 import CallToAction from "../components/shared/CTA/CallToAction";
 import LinkButton from "../components/shared/LinkButton";
+import PageChange from "../components/shared/PageChange";
 
 export default async function Techies4Good() {
   const techiesPageData = await fetchTechiePageData();
@@ -12,6 +13,7 @@ export default async function Techies4Good() {
 
   return (
     <>
+      <PageChange />
       <PageHeader pageTitle={pageHeader?.pageTitle ? pageHeader.pageTitle : ""}>
         {pageHeader?.underTitleContent && (
           <PortableText value={pageHeader.underTitleContent} />

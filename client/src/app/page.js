@@ -8,6 +8,7 @@ import TestimonialsSection from "./components/Home/TestimonialsSection";
 import GallerySection from "./components/Home/GallerySection";
 import CallToAction from "./components/shared/CTA/CallToAction";
 import LinkButton from "./components/shared/LinkButton";
+import PageChange from "./components/shared/PageChange";
 export default async function Home() {
   const homePageData = await fetchHomepageData();
   const {
@@ -21,6 +22,7 @@ export default async function Home() {
 
   return (
     <div className="">
+      <PageChange />
       <Hero hero={hero} />
       <StatisticsSection statisticsData={statisticsSection} />
       <FriendsSection friendsData={friendsSection} />

@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import TechiesCards from "../techies4good/TechiesCards";
 import CallToAction from "../components/shared/CTA/CallToAction";
 import LinkButton from "../components/shared/LinkButton";
+import PageChange from "../components/shared/PageChange";
 
 export default async function Apps4Good() {
   const portfoliosPageData = await fetchPortfoliosPageData();
@@ -11,6 +12,7 @@ export default async function Apps4Good() {
 
   return (
     <>
+      <PageChange />
       <PageHeader pageTitle={pageHeader?.pageTitle ? pageHeader.pageTitle : ""}>
         {pageHeader?.underTitleContent && (
           <PortableText value={pageHeader.underTitleContent} />

@@ -40,6 +40,10 @@ module.exports = {
           "0%": { transform: "scaleX(0)" },
           "100%": { transform: "scaleX(1)" },
         },
+        scaleYToZero: {
+          "0%": { transform: "scaleY(1)" },
+          "100%": { transform: "scaleY(0)" },
+        },
       },
       transitionProperty: {
         width: "width",
@@ -55,6 +59,7 @@ module.exports = {
         showProjectContentButton:
           "showProjectContent 0.5s ease-in-out 1.3s forwards",
         testimonialAutoSlide: "testimonialAutoSlide 10s infinite linear",
+        scaleYToZero: "scaleYToZero 1s forwards",
       },
       gridTemplateColumns: {
         "40-60": "40% 60%",
