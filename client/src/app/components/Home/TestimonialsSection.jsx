@@ -85,7 +85,7 @@ export default function TestimonialsSection({ testimonialsData }) {
             {whiteTitle}
           </SectionTitle>
         </div>
-        <div className="absolute right-0 w-[200px] h-1 rounded-full bg-custom-light/20">
+        <div className="absolute right-0 w-[200px] h-1 rounded-full bg-custom-light/20 hidden md:block">
           <div
             key={animateProgressKey}
             className="h-1 origin-left w-[100%] rounded-full animate-testimonialAutoSlide bg-custom-light"

@@ -9,6 +9,9 @@ import { IoIosCloseCircle } from "react-icons/io";
 
 const Column = ({ images, y = 0, colNumber, handleToggleModal }) => {
   console.log(y);
+  if (y > 0) {
+    y = 0;
+  }
   return (
     <motion.div
       style={{ y }}
@@ -33,18 +36,22 @@ export default function GallerySection({ galleryData }) {
   const { height, width } = useDimension();
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end start"],
+    offset: ["start end", "-0.2 start"],
   });
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [width < 1024 ? -height * 0.9 : -height * 1.4, height * 1.4]
+    [width < 1024 ? -height * 0.9 : -height * 1.4, 0.1]
   );
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * -0.2]);
+  const y2 = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [width < 1024 ? -height * 1.2 : -height * 1.3, 0.1]
+  );
   const y3 = useTransform(
     scrollYProgress,
     [0, 1],
-    [width < 1024 ? -height * 0.9 : -height * 1.4, height * 1.4]
+    [width < 1024 ? -height * 0.9 : -height * 1.5, 0.1]
   );
   const { mainTitle, pseudoTitle, galleryImages } = galleryData;
 
@@ -86,6 +93,7 @@ export default function GallerySection({ galleryData }) {
               colNumber={3}
               images={[galleryImages[7], galleryImages[8], galleryImages[2]]}
               y={y3}
+              height={height}
               handleToggleModal={handleToggleModal}
             />
           </div>
