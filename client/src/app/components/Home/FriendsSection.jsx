@@ -1,5 +1,6 @@
 import { urlFor } from "@/utils/sanity";
 import SectionTitle from "../shared/SectionTitle";
+import Image from "next/image";
 
 export default function FriendsSection({ friendsData }) {
   const { mainTitle, pseudoTitle, logoCarousel } = friendsData;
@@ -26,11 +27,13 @@ export default function FriendsSection({ friendsData }) {
           {logoCarousel &&
             logoCarousel.map((logo, index) => {
               return (
-                <img
+                <Image
                   key={index}
                   src={urlFor(logo).url()}
                   alt={logo.alt}
-                  className="h-[100px] md:h-[150px] inline-block mr-8 md:mr-20"
+                  width={200}
+                  height={150}
+                  className="h-[100px] md:h-[150px] w-auto inline-block mr-8 md:mr-20"
                 />
               );
             })}
@@ -39,11 +42,13 @@ export default function FriendsSection({ friendsData }) {
           {logoCarousel &&
             logoCarousel.map((logo, index) => {
               return (
-                <img
+                <Image
                   key={index}
                   src={urlFor(logo).url()}
                   alt={logo.alt}
-                  className="h-[100px] md:h-[150px] inline-block mr-8 md:mr-20"
+                  width={200}
+                  height={150}
+                  className="h-[100px] md:h-[150px] w-auto inline-block mr-8 md:mr-20"
                 />
               );
             })}

@@ -25,6 +25,8 @@ export default function ProjectCard({ projectInfo, index }) {
     projectSponserLinkUrl,
   } = projectInfo;
 
+  console.log(projectImage);
+
   return (
     <article
       className={`py-8 lg:grid lg:grid-cols-2 lg:gap-4 xl:absolute xl:h-[100%] xl:top-0 xl:left-0 xl:w-[70%] transition-all duration-[0.7s] xl:pb-0 ${
@@ -36,7 +38,12 @@ export default function ProjectCard({ projectInfo, index }) {
           index % 2 === 0 ? "lg:order-2" : "lg:order-1"
         } xl:order-2`}
       >
-        <img src={urlFor(projectImage).url()} alt={projectImage.alt} />
+        <Image
+          height={400}
+          width={600}
+          src={urlFor(projectImage).url()}
+          alt={projectImage.alt}
+        />
       </div>
       <div
         className={`mb-8 ${

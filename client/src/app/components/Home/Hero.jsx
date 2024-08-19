@@ -18,6 +18,7 @@ export default function Hero({ hero }) {
             alt="Code.sydney Logo"
             width={50}
             height={50}
+            priority
           />
           {title ? title : "Code.Sydney"}
         </h1>
@@ -30,14 +31,14 @@ export default function Hero({ hero }) {
           </LinkButton>
         )}
       </div>
-      <div className="">
+      <div className="relative">
         {image && (
           <Image
-            // className="w-10"
+            className="w-full h-auto"
             src={image.asset.url}
             alt={image?.alt ? image.alt : ""}
-            width={306}
-            height={193}
+            width={612}
+            height={386}
             priority
           />
         )}

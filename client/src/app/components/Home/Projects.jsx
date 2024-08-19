@@ -33,13 +33,6 @@ export default function Projects({ projectsData }) {
           })}
       </div>
       <div className="justify-start gap-20 hidden xl:flex ">
-        {/* <button
-          className="group flex gap-2 items-center text-custom-primary py-1  hover:text-custom-light hover:border-custom-light transition-all duration-400"
-          onClick={handleNextClick}
-        >
-          Next Project
-          <GrFormNextLink className="text-3xl text-custom-primary ml-0 group-hover:text-custom-light transition-all duration-400 group-hover:translate-x-[10px]" />
-        </button> */}
         <ProjectSectionNav
           projectsLength={projects.length}
           currentProject={currentProject}

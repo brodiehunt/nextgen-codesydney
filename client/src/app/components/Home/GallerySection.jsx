@@ -49,6 +49,7 @@ export default function GallerySection({ galleryData }) {
   const handleToggleModal = (image) => {
     setModalImage(image);
   };
+  console.log("titles", mainTitle, pseudoTitle);
 
   return (
     <>
@@ -66,7 +67,7 @@ export default function GallerySection({ galleryData }) {
             <Column
               colNumber={1}
               images={[galleryImages[0], galleryImages[1], galleryImages[9]]}
-              initialTopPosition="top-[-45%]"
+              initialTopPosition="top-[-60%] md:top-[-45%]"
               y={y}
               handleToggleModal={handleToggleModal}
             />
@@ -78,7 +79,7 @@ export default function GallerySection({ galleryData }) {
                 galleryImages[5],
                 galleryImages[6],
               ]}
-              initialTopPosition="top-[5%]"
+              initialTopPosition="top-[0%] md:top-[5%]"
               y={y2}
               handleToggleModal={handleToggleModal}
             />
@@ -86,7 +87,7 @@ export default function GallerySection({ galleryData }) {
               colNumber={3}
               images={[galleryImages[7], galleryImages[8], galleryImages[2]]}
               y={y3}
-              initialTopPosition="top-[-45%]"
+              initialTopPosition="top-[-55%] md:top-[-45%]"
               handleToggleModal={handleToggleModal}
             />
           </div>

@@ -2,6 +2,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { motion, useAnimate } from "framer-motion";
 import LinkButton from "../components/shared/LinkButton";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 export default function TechieCard({
   techieData,
   isCardActive,
@@ -40,7 +41,14 @@ export default function TechieCard({
         }`}
       >
         <div className="md:max-w-[400px] lg:w-[400px]">
-          <img src={image.asset.url} className="" />
+          <Image
+            width={400}
+            height={400}
+            src={image.asset.url}
+            alt={image.alt}
+            className="w-[100%] h-auto"
+            priority
+          />
         </div>
         {isActive && (
           <motion.div
