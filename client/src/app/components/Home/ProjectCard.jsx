@@ -79,7 +79,7 @@ export default function ProjectCard({ projectInfo, index }) {
             index === 1 ? "xl:opacity-0 animate-showProjectContentButton" : ""
           }
         >
-          Link to Project Sponser
+          Link to Project Sponsor
         </LinkButton>
       </div>
     </article>

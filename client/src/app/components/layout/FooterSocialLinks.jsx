@@ -36,7 +36,7 @@ const socialLinksGroup2 = [
   {
     href: "https://www.facebook.com/codesyd/",
     icon: FaFacebookF,
-    nlabel: "Go to Code.Sydney Facebook Profile",
+    label: "Go to Code.Sydney Facebook Profile",
   },
   {
     href: "https://twitter.com/code_sydney",
