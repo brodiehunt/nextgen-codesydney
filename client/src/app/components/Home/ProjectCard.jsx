@@ -3,17 +3,19 @@ import { urlFor } from "@/utils/sanity";
 import LinkButton from "../shared/LinkButton";
 
 const indexOne =
-  "xl:translate-x-[-100%] xl:scale-150 xl:blur-lg xl:opacity-0 xl:pointer-events-none";
+  "xl:translate-x-[-100%] xl:scale-150 xl:opacity-0 xl:pointer-events-none";
 const indexTwo =
-  "xl:opacity-1 xl:translate-x-[0%] xl:scale-100 xl:translate-y-[0%] xl:blur-none xl:z-30";
+  "xl:opacity-1 xl:translate-x-[0%] xl:scale-100 xl:translate-y-[0%] xl:z-30";
 const indexThree =
-  "xl:translate-x-[50%] xl:translate-y-[10%] xl:scale-80 xl:z-20 xl:blur-lg xl:opacity-1 xl:pointer-events-none";
+  "xl:translate-x-[50%] xl:translate-y-[10%] xl:scale-80 xl:z-20 xl:opacity-1 xl:pointer-events-none";
 const indexFour =
-  "xl:translate-x-[90%] xl:translate-y-[20%] xl:scale-40 xl:blur-xl xl:z-10 xl:opacity-1 xl:pointer-events-none";
+  "xl:translate-x-[90%] xl:translate-y-[20%] xl:scale-40 xl:z-10 xl:opacity-1 xl:pointer-events-none";
 
 const indexFive =
-  "xl:translate-x-[120%] xl:translate-y-[30%] xl:scale-30 xl:blur-xl xl:z-0 xl:opacity-0 xl:pointer-events-none";
+  "xl:translate-x-[120%] xl:translate-y-[30%] xl:scale-30 xl:z-0 xl:opacity-0 xl:pointer-events-none";
 
+// xl:blur-xl (removed from indexOne, indexThree, four and five)
+// xl:blur-none (removed from indexTwo)
 const styleArray = [indexOne, indexTwo, indexThree, indexFour, indexFive];
 
 export default function ProjectCard({ projectInfo, index }) {

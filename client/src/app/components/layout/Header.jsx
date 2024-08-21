@@ -59,7 +59,7 @@ export default function Header({}) {
       <Link href="/" className="flex relative z-20 gap-2 items-center">
         <Image
           className="w-10"
-          src="/images/logo-codesyd.png"
+          src="/images/logo-codesyd.webp"
           alt="Code.sydney Logo"
           width={50}
           height={50}

@@ -19,7 +19,7 @@ export default function Footer() {
               <h3 className="mb-4 flex items-center gap-2 font-semibold text-4xl ">
                 <Image
                   className="w-10"
-                  src="/images/logo-codesyd.png"
+                  src="/images/logo-codesyd.webp"
                   alt="Code.sydney Logo"
                   width={50}
                   height={50}

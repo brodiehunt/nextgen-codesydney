@@ -14,7 +14,7 @@ export default function Hero({ hero }) {
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-2 lg:text-6xl flex gap-2 items-center">
           <Image
             className="w-10"
-            src="/images/logo-codesyd.png"
+            src="/images/logo-codesyd.webp"
             alt="Code.sydney Logo"
             width={50}
             height={50}
@@ -35,7 +35,8 @@ export default function Hero({ hero }) {
         {image && (
           <Image
             className="w-full h-auto"
-            src={image.asset.url}
+            // src={image.asset.url}
+            src="/images/home_hero.webp"
             alt={image?.alt ? image.alt : ""}
             width={612}
             height={386}

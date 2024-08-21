@@ -36,13 +36,20 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        // showProjectContent: {
+        //   "0%": {
+        //     transform: "translateY(50px)",
+        //     filter: "blur(30px)",
+        //     opacity: 0,
+        //   },
+        //   "100%": { transform: "translateY(0)", filter: "blur(0)", opacity: 1 },
+        // },
         showProjectContent: {
           "0%": {
             transform: "translateY(50px)",
-            filter: "blur(30px)",
             opacity: 0,
           },
-          "100%": { transform: "translateY(0)", filter: "blur(0)", opacity: 1 },
+          "100%": { transform: "translateY(0)", opacity: 1 },
         },
         testimonialAutoSlide: {
           "0%": { transform: "scaleX(0)" },
@@ -58,7 +65,7 @@ module.exports = {
       },
       animation: {
         fadeIn: "fadeIn 0.3s ease-out",
-        carouselSlide: "carouselSlide 30s infinite linear",
+        carouselSlide: "carouselSlide 60s infinite linear",
         showProjectContentOrganisation:
           "showProjectContent 0.5s ease-in-out 0.7s forwards",
         showProjectContentTitle:

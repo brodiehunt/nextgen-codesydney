@@ -33,6 +33,7 @@ export default function FriendsSection({ friendsData }) {
                   alt={logo.alt}
                   width={200}
                   height={150}
+                  loading="lazy"
                   className="h-[100px] md:h-[150px] w-auto inline-block mr-8 md:mr-20"
                 />
               );
@@ -49,6 +50,7 @@ export default function FriendsSection({ friendsData }) {
                   width={200}
                   height={150}
                   className="h-[100px] md:h-[150px] w-auto inline-block mr-8 md:mr-20"
+                  loading="lazy"
                 />
               );
             })}
