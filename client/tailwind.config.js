@@ -28,6 +28,10 @@ module.exports = {
         "auto-fit-300": "repeat(auto-fit, minmax(300px, 1fr))",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "0", transform: "translateY(0)" },
+        },
         carouselSlide: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
@@ -53,6 +57,7 @@ module.exports = {
         width: "width",
       },
       animation: {
+        fadeIn: "fadeIn 0.3s ease-out",
         carouselSlide: "carouselSlide 30s infinite linear",
         showProjectContentOrganisation:
           "showProjectContent 0.5s ease-in-out 0.7s forwards",
