@@ -15,7 +15,7 @@ const SvgCurve = () => {
   }, []);
 
   return (
-    <svg className="absolute top-0 right-[-100px] w-[100px] h-[100%] fill-custom-dark/90 stroke-none">
+    <svg className="absolute top-0 right-[-100px] w-[100px] h-[100%] fill-custom-dark stroke-none">
       <path d={path}></path>
     </svg>
   );
@@ -36,7 +36,7 @@ export default function MobileDropdown({ navLinks, isActive, pathname }) {
       transition={{ type: "tween", duration: 0.3 }}
       className="fixed w-full h-[100svh] top-0 left-0 flex lg:hidden"
     >
-      <motion.ul className="h-full bg-custom-dark/90 flex flex-col min-w-[300px] items-stretch gap-4 p-8 pt-[100px] relative">
+      <motion.ul className="h-full bg-custom-dark flex flex-col min-w-[300px] items-stretch gap-4 p-8 pt-[100px] relative">
         <SvgCurve />
         {navLinks.map((link, index) => (
           <motion.li
