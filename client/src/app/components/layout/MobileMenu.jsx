@@ -37,7 +37,7 @@ export default function MobileDropdown({ navLinks, isActive, pathname }) {
       className="fixed w-full h-[100svh] top-0 left-0 flex lg:hidden"
     >
       <motion.ul className="h-full bg-custom-dark flex flex-col min-w-[300px] items-stretch gap-4 p-8 pt-[100px] relative">
-        <SvgCurve />
+        {/* <SvgCurve /> */}
         {navLinks.map((link, index) => (
           <motion.li
             key={index}
