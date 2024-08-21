@@ -15,7 +15,7 @@ const Button = ({ children, variant, isLink, handleClick, extraClasses }) => {
     return (
       <button
         type="button"
-        className={`flex items-center gap-2 py-1 text-custom-primary/90 hover:text-custom-primary
+        className={`flex items-center gap-2 py-1 text-custom-primary hover:text-custom-primary
        transition-all duration-200 w-fit ${extraClasses}`}
         onClick={handleClick}
       >
