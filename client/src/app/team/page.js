@@ -2,7 +2,7 @@ import PageChange from "../components/shared/PageChange";
 import PageHeader from "../components/shared/PageHeader";
 import Leadership from "./Leadership";
 import Mentors from "./Mentors";
-import { fetchTeamPageData } from "@/utils/sanityAPIFuncs";
+import { fetchTeamPageData } from "@/sanity/lib/sanityAPIFuncs";
 import { PortableText } from "@portabletext/react";
 
 export default async function Team() {

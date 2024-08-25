@@ -1,5 +1,5 @@
 import PageHeader from "../components/shared/PageHeader";
-import { fetchApps4GoodPageData } from "@/utils/sanityAPIFuncs";
+import { fetchApps4GoodPageData } from "@/sanity/lib/sanityAPIFuncs";
 import { PortableText } from "@portabletext/react";
 import TechiesCards from "../techies4good/TechiesCards";
 import CallToAction from "../components/shared/CTA/CallToAction";

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { fetchHomepageData } from "@/utils/sanityAPIFuncs";
+import { fetchHomepageData } from "@/sanity/lib/sanityAPIFuncs";
 import Hero from "./components/Home/Hero";
 import StatisticsSection from "./components/Home/StatisticsSection";
 import ProjectsSection from "./components/Home/ProjectsSection";

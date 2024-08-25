@@ -1,8 +1,7 @@
 import PageHeader from "../components/shared/PageHeader";
-import { fetchTechiePageData } from "@/utils/sanityAPIFuncs";
+import { fetchTechiePageData } from "@/sanity/lib/sanityAPIFuncs";
 import { PortableText } from "@portabletext/react";
 import TechiesCards from "./TechiesCards";
-import { v4 as uuidv4 } from "uuid";
 import CallToAction from "../components/shared/CTA/CallToAction";
 import LinkButton from "../components/shared/LinkButton";
 import PageChange from "../components/shared/PageChange";

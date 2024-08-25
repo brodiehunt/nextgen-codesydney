@@ -1,4 +1,4 @@
-import { client } from "./sanity";
+import { client } from "./client";
 
 export const fetchHomepageData = async () => {
   const homeDataQuery = `
@@ -74,7 +74,9 @@ export const fetchHomepageData = async () => {
     }[0]
   `;
 
-  const data = await client.fetch(homeDataQuery);
+  const data = await client.fetch(homeDataQuery, {
+    next: { tags: ["homepage"] },
+  });
   return data;
 };
 

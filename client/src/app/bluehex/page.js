@@ -1,5 +1,5 @@
 import PageHeader from "../components/shared/PageHeader";
-import { fetchBlueHexPageData } from "@/utils/sanityAPIFuncs";
+import { fetchBlueHexPageData } from "@/sanity/lib/sanityAPIFuncs";
 import { PortableText } from "@portabletext/react";
 import TechiesCards from "../techies4good/TechiesCards";
 import CallToAction from "../components/shared/CTA/CallToAction";
