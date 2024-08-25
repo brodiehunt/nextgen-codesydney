@@ -74,9 +74,13 @@ export const fetchHomepageData = async () => {
     }[0]
   `;
 
-  const data = await client.fetch(homeDataQuery, {
-    next: { tags: ["homepage"] },
-  });
+  const data = await client.fetch(
+    homeDataQuery,
+    {},
+    {
+      next: { tags: ["homepage"] },
+    }
+  );
   return data;
 };
 
