@@ -1,4 +1,5 @@
 import { revalidateTag } from "next/cache";
+import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const body = await request.json();
@@ -7,7 +8,7 @@ export async function POST(request) {
   if (body.secret !== process.env.SANITY_WEBHOOK_SECRET) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
-
+  console.log("Recieved webhook:", body);
   try {
     if (body._type === "homepage") {
       revalidateTag("homepage");
@@ -18,7 +19,11 @@ export async function POST(request) {
       });
     }
 
-    return NextResponse.json({ revalidated: true, now: Date.now(), tag });
+    return NextResponse.json({
+      revalidated: true,
+      now: Date.now(),
+      tag: "homepage",
+    });
   } catch (err) {
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
