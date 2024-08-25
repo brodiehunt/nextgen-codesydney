@@ -28,11 +28,10 @@ export default function Footer() {
               </h3>
             </Link>
             <p className="text-xl font-semibold text-custom-primary">
-              Dux Servit!
+              Dux Servit
             </p>
-            <p className="text-custom-light/90 max-w-[400px] text-center lg:text-left">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              cum ipsa sint alias suscipit.
+            <p className="font-light text-custom-light/90 max-w-[400px] text-center lg:text-left">
+              Technology for Good.
             </p>
           </div>
           <FooterWebsiteLinks isActive={isActive} />

@@ -1,14 +1,14 @@
 import PageHeader from "../components/shared/PageHeader";
-import { fetchPortfoliosPageData } from "@/utils/sanityAPIFuncs";
+import { fetchBlueHexPageData } from "@/utils/sanityAPIFuncs";
 import { PortableText } from "@portabletext/react";
 import TechiesCards from "../techies4good/TechiesCards";
 import CallToAction from "../components/shared/CTA/CallToAction";
 import LinkButton from "../components/shared/LinkButton";
 import PageChange from "../components/shared/PageChange";
 
-export default async function Apps4Good() {
-  const portfoliosPageData = await fetchPortfoliosPageData();
-  const { pageHeader, portfolios } = portfoliosPageData;
+export default async function BlueHex() {
+  const blueHexPageData = await fetchBlueHexPageData();
+  const { pageHeader, blueHexGroups } = blueHexPageData;
 
   return (
     <>
@@ -18,7 +18,7 @@ export default async function Apps4Good() {
           <PortableText value={pageHeader.underTitleContent} />
         )}
       </PageHeader>
-      {portfolios && <TechiesCards techiesData={portfolios} />}
+      {blueHexGroups && <TechiesCards techiesData={blueHexGroups} />}
       <CallToAction title="Ready to Transform Your Mission into a Digital Success?">
         <p className="text-center mb-8 max-w-[600px] font-light">
           We provide software development, integration and data consultancy

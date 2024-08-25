@@ -25,6 +25,7 @@
   p,
   span,
   li,
+  label,
   a {
     @apply text-custom-dark dark:text-custom-light;
   }

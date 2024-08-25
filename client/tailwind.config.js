@@ -36,14 +36,6 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
-        // showProjectContent: {
-        //   "0%": {
-        //     transform: "translateY(50px)",
-        //     filter: "blur(30px)",
-        //     opacity: 0,
-        //   },
-        //   "100%": { transform: "translateY(0)", filter: "blur(0)", opacity: 1 },
-        // },
         showProjectContent: {
           "0%": {
             transform: "translateY(50px)",
@@ -58,6 +50,16 @@ module.exports = {
         scaleYToZero: {
           "0%": { transform: "scaleY(1)" },
           "100%": { transform: "scaleY(0)" },
+        },
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(14deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "30%": { transform: "rotate(14deg)" },
+          "40%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "60%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
         },
       },
       transitionProperty: {
@@ -76,6 +78,7 @@ module.exports = {
           "showProjectContent 0.5s ease-in-out 1.3s forwards",
         testimonialAutoSlide: "testimonialAutoSlide 10s infinite linear",
         scaleYToZero: "scaleYToZero 1s forwards",
+        wavingHand: "wave 2.5s ease-in-out infinite",
       },
       gridTemplateColumns: {
         "40-60": "40% 60%",

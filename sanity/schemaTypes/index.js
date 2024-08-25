@@ -23,6 +23,8 @@ import app from './app.js'
 import portfoliosPage from './portfoliosPage.js'
 import portfolio from './portfolio.js'
 import teamMember from './teamMember.js'
+import blueHexGroup from './blueHexGroup.js'
+import blueHexPage from './blueHexPage.js'
 
 export const schemaTypes = [
   navLink,
@@ -50,4 +52,6 @@ export const schemaTypes = [
   portfoliosPage,
   portfolio,
   teamMember,
+  blueHexGroup,
+  blueHexPage,
 ]

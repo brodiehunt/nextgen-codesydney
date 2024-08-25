@@ -4,7 +4,7 @@ export default function PageHeader({ pageTitle, children }) {
       <h1 className="text-custom-light font-bold text-3xl md:text-4xl lg:text-6xl mb-4 max-w-[1000px] relative z-10">
         {pageTitle}
       </h1>
-      <div className="max-w-[1000px] relative z-20 text-custom-primary">
+      <div className="max-w-[1000px] relative z-20 text-custom-primary font-light">
         {children}
       </div>
     </header>

@@ -1,10 +1,15 @@
 import PageChange from "../components/shared/PageChange";
+import ContactPageHeader from "./ContactPageHeader";
+import ContactPageForm from "./ContactPageForm";
+import Consultation from "./Consultation";
 
 export default function Contact() {
   return (
-    <>
+    <div className="z-50">
       <PageChange />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
-    </>
+      <ContactPageHeader />
+      <ContactPageForm />
+      <Consultation />
+    </div>
   );
 }

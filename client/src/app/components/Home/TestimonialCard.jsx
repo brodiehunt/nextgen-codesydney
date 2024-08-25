@@ -30,7 +30,7 @@ export default function TestimonialCard({
         <p className="text-custom-light/70">{testimonial.jobTitle}</p>
       </div>
       <p
-        className={`my-4 text-custom-light/80 text-sm transition-all duration-1000 ${
+        className={`my-4 text-custom-light/80 text-sm transition-all duration-1000 font-light ${
           isExpanded ? "line-clamp-none" : "line-clamp-6 md:line-clamp-4"
         }`}
       >

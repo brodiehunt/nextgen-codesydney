@@ -13,7 +13,7 @@ export default function TestimonialsSection({ testimonialsData }) {
   const cardRefSecondCol = useRef(null);
   const [cardFirstColHeight, setCardFirstColHeight] = useState(0);
   const [cardSecondColHeight, setCardSecondColHeight] = useState(0);
-  const [blueTitle, whiteTitle] = [mainTitle.slice(0, 7), mainTitle.slice(7)];
+  const [blueTitle, whiteTitle] = [mainTitle.slice(0, 12), mainTitle.slice(12)];
   const [animateProgressKey, setAnimateProgressKey] = useState(0);
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -80,8 +80,8 @@ export default function TestimonialsSection({ testimonialsData }) {
       <div className="w-[700px] skew-y-12 h-[460px] bg-gradient-to-br from-custom-primary/20 via-custom-primary/50 to-white/50 rounded-full blur-[100px] absolute top-[100px] left-[50%] translate-x-[-30%] z-0 xl:w-[1200px]"></div>
       <div className="relative z-100 xl:grid xl:grid-cols-40-60">
         <div className="relative mb-8">
-          <SectionTitle psuedoTitle={pseudoTitle ? "Reviews" : ""}>
-            <span className="text-custom-primary">Testimonials</span>
+          <SectionTitle psuedoTitle={pseudoTitle ? pseudoTitle : ""}>
+            <span className="text-custom-primary">{blueTitle}</span>
             {whiteTitle}
           </SectionTitle>
         </div>

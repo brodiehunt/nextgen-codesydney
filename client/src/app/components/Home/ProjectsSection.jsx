@@ -11,11 +11,8 @@ export default function ProjectsSection({ projectsData }) {
         </span>
       </SectionTitle>
       {belowTitleText && (
-        <p className="mt-8 text-center mx-auto max-w-[1000px]">
-          Code.Sydney is a volunteering organisation that supports beginner
-          developers transition to gain paid employment while helping non-profit
-          and charity organisations with their app needs. Below are some of our
-          projects.
+        <p className="mt-8 text-center mx-auto max-w-[1000px] font-light">
+          {belowTitleText}
         </p>
       )}
 

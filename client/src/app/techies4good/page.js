@@ -20,12 +20,11 @@ export default async function Techies4Good() {
         )}
       </PageHeader>
       {techies && <TechiesCards techiesData={techies} />}
-      <CallToAction title="Need some tech assistance from one of our Techies4Good?">
-        <p className="text-center mb-8 max-w-[600px]">
-          Techies4Good (T4G) is Code.Sydney&apos;s elite team. Its members are
-          seasoned software and data engineers with proven commercial
-          experience, published portfolios, invited and nominated by community
-          leaders
+      <CallToAction title="Ready to Transform Your Mission into a Digital Success?">
+        <p className="text-center mb-8 max-w-[600px] font-light">
+          We provide software development, integration and data consultancy
+          tailored for non-profits, charities, and organizations of all sizes.
+          Our commitment is to amplify your mission and ensure your success.
         </p>
         <LinkButton to="/contact" variant="hollow" target="">
           Get Started Now

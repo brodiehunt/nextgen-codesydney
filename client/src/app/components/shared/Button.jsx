@@ -1,4 +1,4 @@
-const Button = ({ children, variant, isLink, handleClick, extraClasses }) => {
+const Button = ({ children, variant, handleClick, extraClasses }) => {
   if (variant === "hollow") {
     return (
       <button

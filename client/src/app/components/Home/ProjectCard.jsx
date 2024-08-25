@@ -67,7 +67,7 @@ export default function ProjectCard({ projectInfo, index }) {
           {projectType ? projectType : ""}
         </h3>
         <p
-          className={`mb-4 xl:opacity-0 ${
+          className={`mb-4 xl:opacity-0 font-light ${
             index === 1 ? "animate-showProjectContentDescription" : ""
           }`}
         >

@@ -10,8 +10,8 @@ import HamburgerIcon from "./Hamburger";
 
 const NavLinks = [
   {
-    text: "About",
-    href: "/about",
+    text: "BlueHex",
+    href: "/bluehex",
   },
   {
     text: "Techies4Good",

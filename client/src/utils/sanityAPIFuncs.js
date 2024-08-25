@@ -78,6 +78,31 @@ export const fetchHomepageData = async () => {
   return data;
 };
 
+export const fetchBlueHexPageData = async () => {
+  const blueHexQuery = `
+    *[_type == "blueHexPage"]{
+      pageHeader {
+        pageTitle,
+        underTitleContent,
+      },
+      apps[] {
+        name,
+        description,
+        linkedinUrl,
+        image {
+          asset->{
+          url
+          },
+          alt,
+        },
+      },
+    }[0]
+  `;
+
+  const data = await client.fetch(blueHexQuery);
+  return data;
+};
+
 export const fetchTechiePageData = async () => {
   const techiesDataQuery = `
     *[_type == "techies4GoodPage"]{

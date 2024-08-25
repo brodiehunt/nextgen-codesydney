@@ -6,7 +6,7 @@ export default function NavLink({ href, text, isActive, isButtonStyle }) {
       {isButtonStyle ? (
         <Link
           href={href}
-          className={`group relative inline-block px-2 rounded-full w-full transition-all duration-200
+          className={`font-light group relative inline-block px-2 rounded-full w-full transition-all duration-200
         ${
           isActive &&
           "before:content-[''] before:absolute before:inset-0 before:bg-custom-primary before:blur-[20px] before:rounded-full"

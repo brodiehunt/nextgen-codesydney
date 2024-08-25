@@ -50,7 +50,7 @@ const MemberCard = ({ member }) => {
           >
             {memberName}
           </motion.h3>
-          <motion.p layoutId={`member-role-${memberName}`}>
+          <motion.p className="text-lg" layoutId={`member-role-${memberName}`}>
             {memberRole}
           </motion.p>
         </motion.div>
@@ -103,7 +103,7 @@ const MemberCard = ({ member }) => {
                   </motion.h3>
                   <motion.p
                     layoutId={`member-role-${memberName}`}
-                    className="mb-4"
+                    className="mb-4 text-lg"
                   >
                     {memberRole}
                   </motion.p>

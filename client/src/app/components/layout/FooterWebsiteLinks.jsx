@@ -3,12 +3,8 @@ import NavLink from "./NavLink";
 
 const footerLinks = [
   {
-    text: "About",
-    href: "/about",
-  },
-  {
-    text: "Team",
-    href: "/team",
+    text: "BlueHex",
+    href: "/bluehex",
   },
   {
     text: "Techies4Good",
@@ -17,6 +13,14 @@ const footerLinks = [
   {
     text: "Apps4Good",
     href: "/apps4good",
+  },
+  {
+    text: "Portfolios",
+    href: "/portfolios",
+  },
+  {
+    text: "Team",
+    href: "/team",
   },
 ];
 
@@ -28,7 +32,10 @@ export default function FooterWebsiteLinks({ isActive }) {
         {footerLinks &&
           footerLinks.map((footerLink, index) => {
             return (
-              <li key={index} className="text-center lg:text-end py-1">
+              <li
+                key={index}
+                className="font-light text-center lg:text-end py-1"
+              >
                 <NavLink
                   href={footerLink.href}
                   text={footerLink.text}

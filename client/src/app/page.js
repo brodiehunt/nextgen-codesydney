@@ -30,12 +30,10 @@ export default async function Home() {
       <TestimonialsSection testimonialsData={testimonialsSection} />
       <GallerySection galleryData={gallerySection} />
       <CallToAction title="Ready to Transform Your Mission into a Digital Success?">
-        <p className="text-center mb-8 max-w-[600px]">
-          At Code.Sydney, we specialise in creating impactful, professional
-          websites and digital tools tailored specifically for non-profits and
-          charities. Our volunteer team is dedicated to helping you amplify your
-          mission online, making it easier for you to connect with your audience
-          and achieve your goals.
+        <p className="text-center mb-8 max-w-[600px] font-light">
+          We provide software development, integration and data consultancy
+          tailored for non-profits, charities, and organizations of all sizes.
+          Our commitment is to amplify your mission and ensure your success.
         </p>
         <LinkButton to="/contact" variant="hollow" target="">
           Get Started Now
